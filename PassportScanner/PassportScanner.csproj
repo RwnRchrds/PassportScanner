@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="IronOcr" Version="2025.6.4" />
+        <PackageReference Include="IronOcr.Extensions.AdvancedScan" Version="2025.5.34533" />
+        <PackageReference Include="Tesseract" Version="5.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Images\" />
+        <Folder Include="tessdata\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="tessdata\eng.traineddata"/>
+        <None Remove="sample-passport.jpg"/>
+        <None Remove="tessdata\ocrb.traineddata" />
+        <Content Include="tessdata\ocrb.traineddata">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="tessdata\mrz.traineddata" />
+        <Content Include="tessdata\mrz.traineddata">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="sample-passport-2.jpg" />
+        <None Remove="Images\British-Passport-1.png" />
+        <Content Include="Images\British-Passport-1.png">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Images\British-Passport-2.jpg" />
+        <Content Include="Images\British-Passport-2.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Images\British-Passport-3.png" />
+        <Content Include="Images\British-Passport-3.png">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Images\Korean-Passport-1.jpg" />
+        <Content Include="Images\Korean-Passport-1.jpg">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>
